@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[RCC] Portal dos Executivos</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins';
+        }
+
+        #main {
+            background-color: white;
+            border-bottom-right-radius: 100px;
+            border-bottom-left-radius: 100px;
+            height: 100vh;
+            overflow: hidden;
+            z-index: 3;
+            /* Impede que elementos ultrapassem a área */
+        }
+
+
+        header {
+            padding: 2.5rem 4rem;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        ul {
+            justify-content: space-between;
+            display: flex;
+            gap: 3rem;
+            list-style: none;
+            font-size: 20px;
+        }
+
+        main {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            z-index: 2;
+            height: 84vh;
+        }
+
+        main h2 {
+            font-weight: 200;
+            letter-spacing: 1rem;
+            font-size: 36px;
+            background-image: linear-gradient(to right, #000 -50%, #fff 40%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            ;
+        }
+
+        main h1 {
+            font-size: 92px;
+            line-height: 100%;
+            margin-left: -0.05rem;
+            letter-spacing: 1rem;
+            opacity: 52%;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            ;
+        }
+
+        main p {
+            display: inline-block;
+            font-size: 20px;
+            letter-spacing: .2rem;
+            width: 50rem;
+            margin-top: 1rem;
+            font-weight: 100;
+        }
+
+        .efeito {
+            position: absolute;
+            z-index: -1;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .img-main {
+            position: absolute;
+            top: 0;
+            right: 5%;
+        }
+
+        .content {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            position: absolute;
+            text-align: left;
+            width: 80%;
+            height: 100%;
+            left: 10rem;
+        }
+
+        .efeito .ponto-azul {
+            position: absolute;
+            top: 50%;
+            left: -5%;
+            transform: translate(-50%, -50%);
+        }
+
+        .efeito .ponto-verde {
+            position: absolute;
+            top: 70%;
+            left: 5;
+            transform: translate(-50%, -50%);
+        }
+
+        .ponto-azul {
+            width: 50rem;
+            height: 60rem;
+            background: radial-gradient(circle, rgba(10, 222, 222) 10%, rgba(0, 0, 255, 0) 70%);
+            border-radius: 50%;
+            filter: blur(30px);
+        }
+
+        .ponto-verde {
+            width: 30rem;
+            height: 20rem;
+            background: radial-gradient(circle, rgba(54, 222, 148) 10%, rgba(0, 0, 255, 0) 70%);
+            border-radius: 50%;
+            filter: blur(30px);
+        }
+
+        button {
+            all: unset;
+        }
+
+        .btn-main {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 4rem;
+            margin-left: -50%;
+            margin-top: 5rem;
+        }
+
+        .btn-arraste {
+            background-color: rgba(143, 143, 143, 0.15);
+            padding: 1rem 2rem;
+            border-top-left-radius: 40px;
+            border-bottom-right-radius: 40px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+        }
+
+        .btn-arraste:hover {
+            background-color: rgba(143, 143, 143, 0.5);
+            box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            cursor: pointer;
+        }
+
+        ul li {
+            position: relative;
+            list-style: none;
+            font-size: 20px;
+            cursor: pointer;
+            padding-bottom: 5px;
+            /* Ajuste para dar espaço para o sublinhado */
+        }
+
+        ul li::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0%;
+            height: 2px;
+            /* Espessura do sublinhado */
+            background-color: #000;
+            /* Cor do sublinhado */
+            transition: width 0.3s ease;
+            /* Suaviza a transição */
+        }
+
+        ul li:hover::after {
+            width: 100%;
+            /* Faz o sublinhado preencher a largura do item */
+        }
+
+        .div-img>.ponto-azul,
+        .div-img>.ponto-verde {
+            position: absolute;
+        }
+
+        .div-img>.ponto-azul {
+            top: 0;
+            right: 2%;
+            height: 40rem;
+            width: 50rem;
+        }
+
+        .div-img>.ponto-verde {
+            width: 40rem;
+            right: 10%;
+            top: 0%;
+        }
+
+        #primeiros-passos {
+            margin-top: -10%;
+            height: 130vh;
+            background-color: #161616;
+            overflow: hidden;
+            /* Evita o colapso da margem */
+            position: relative;
+            z-index: -1;
+        }
+
+        .infos-prom {
+            height: 100%;
+            border: 1px solid #36B1B8;
+            background-image: linear-gradient(to right, rgba(54, 177, 184, 0.1) -60%, rgb(0, 0, 0, 0.2) 98%);
+            font-size: 40px;
+            font-weight: 600;
+            color: white;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            /* Adicionado para centralizar verticalmente */
+            padding: 3rem;
+            text-align: center;
+
+            width: 60%;
+
+            border-top-left-radius: 50px;
+            border-bottom-right-radius: 50px;
+            border-top-right-radius: 2px;
+            border-bottom-left-radius: 2px;
+        }
+
+        .infos-prom p {
+            margin-left: 10%;
+            margin-right: 10%;
+            text-shadow: 0 0 2px rgba(255, 255, 255, 0.8), 0 0 3px rgba(255, 255, 255, 0.5);
+            margin-top: 0;
+            line-gap-override: 0;
+        }
+
+        .word {
+            display: block;
+            font-weight: 100;
+            font-size: 22px;
+            text-shadow: none;
+        }
+
+        .azul {
+            color: rgba(10, 222, 222);
+        }
+
+        .verde {
+            color: rgba(54, 222, 148);
+        }
+
+        .container-infos {
+            display: flex;
+            justify-content: center;
+            margin-top: 14%;
+
+        }
+
+        .mask-img {
+            position: absolute;
+            top: 0;
+            width: 50%;
+            right: 0;
+            z-index: -1;
+        }
+
+        #primeiros-passos>.ponto-azul {
+            position: absolute;
+            filter: blur(100px);
+            width: 30rem;
+            height: 30rem;
+            top: 20rem;
+            left: -10%;
+            z-index: -1;
+        }
+
+        .white {
+            color: white;
+        }
+
+        .title {
+            font-size: 64px;
+            margin-left: 10%;
+            margin-top: 5rem;
+        }
+        .passos {
+            display: block;
+            line-height: 2rem;
+            margin-left: 14%;
+            color: rgb(54, 177, 184);
+        }
+
+        .text-primeiros {
+            font-size: 24px;
+            color: white;
+            position: absolute;
+            width: 620px;
+            text-align: justify;
+            font-weight: 100;
+            top: 45%;
+            right: 15%;
+            text-shadow: 0 0 2px rgba(54, 177, 184, 0.8), 0 0 3px rgba(54, 177, 184, 0.5);
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <section id="main">
+        <header>
+            <div class="logo-main">
+                <img src="https://i.postimg.cc/PqN5WxTr/image-14.png" alt="logo diretoria" />
+                <img src="https://i.postimg.cc/Pxz9NW9L/image-16.png" alt="logo executivos" />
+            </div>
+            <nav>
+                <ul>
+                    <li>INÍCIO</li>
+                    <li>PRIMEIROS PASSOS</li>
+                    <li>MANUAIS E INFORMAÇÕES</li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <div class="efeito">
+                <div class="ponto-azul"></div>
+                <div class="ponto-verde"></div>
+            </div>
+            <div class="content">
+                <h2>PORTAL DO</h2>
+                <h1>CORPO</h1>
+                <h1>EXECUTIVO</h1>
+                <p>Neste portal, você terá acesso às principais informações sobre o Corpo Executivo, os seus processos e
+                    os grupos relacionados a ele.</p>
+                <div class="btn-main">
+                    <button class="btn-arraste">ARRASTE PARA BAIXO</button>
+                    <img src="https://i.postimg.cc/3r0t42qf/Vector.png" alt="">
+                </div>
+            </div>
+            <div class="div-img">
+                <div class="ponto-azul"></div>
+                <div class="ponto-verde"></div>
+                <img class="img-main" src="https://i.ibb.co/PsYsBvVs/xaDdJaZ.png" alt="imagem principal" width="34%" />
+            </div>
+        </main>
+    </section>
+
+    <section id="primeiros-passos">
+        <div class="ponto-azul"></div>
+        <img src="https://i.postimg.cc/HLDTGZHg/Mask-group.png" alt="" class="mask-img">
+        <div class="container-infos">
+            <div class="infos-prom">
+                <p>550<span class="azul">+</span><span class="word">Executivos</span></p>
+                <p>350<span class="verde">+</span><span class="word">Especializados</span></p>
+                <p>400<span class="azul">+</span><span class="word">Propostas</span></p>
+            </div>
+        </div>
+
+        <div class="title">
+            <h2 class="white">PRIMEIROS</h2>
+            <h2 class="azul passos"><em>PASSOS</em></h2>
+        </div>
+
+        <div class="text-primeiros">Saiba mais sobre a RCC e os seus primeiros passos. Saiba mais sobre a Especialização Básica (EB) e como obtê-la.</div>
+
+    </section>
+</body>
+
+</html>
