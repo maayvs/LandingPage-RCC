@@ -94,7 +94,7 @@
         .img-main {
             position: absolute;
             top: 0;
-            right: 5%;
+            right: 2rem;
         }
 
         .content {
@@ -110,15 +110,16 @@
 
         .efeito .ponto-azul {
             position: absolute;
-            top: 50%;
-            left: -5%;
+            top: 15rem;
+            left: -4rem;
             transform: translate(-50%, -50%);
+            z-index: -2;
         }
 
         .efeito .ponto-verde {
             position: absolute;
-            top: 70%;
-            left: 5;
+            top: 25rem;
+            left: 2rem;
             transform: translate(-50%, -50%);
         }
 
@@ -148,7 +149,7 @@
             align-items: center;
             flex-direction: column;
             gap: 4rem;
-            margin-left: -50%;
+            margin-left: -35rem;
             margin-top: 5rem;
         }
 
@@ -201,26 +202,33 @@
         }
 
         .div-img>.ponto-azul {
-            top: 0;
-            right: 2%;
+            top: -2rem;
+            right: -3rem;
             height: 40rem;
             width: 50rem;
         }
 
         .div-img>.ponto-verde {
             width: 40rem;
-            right: 10%;
+            right: -1rem;
             top: 0%;
         }
 
-        #primeiros-passos {
+        #zindex {
             margin-top: -10%;
-            height: 130vh;
+            height: 21vh;
             background-color: #161616;
             overflow: hidden;
             /* Evita o colapso da margem */
             position: relative;
             z-index: -1;
+        }
+
+        #primeiros-passos {
+            height: 160vh;
+            background-color: #161616;
+            overflow: hidden;
+            position: relative;
         }
 
         .infos-prom {
@@ -272,26 +280,30 @@
         .container-infos {
             display: flex;
             justify-content: center;
-            margin-top: 14%;
+            margin-top: 6rem;
 
         }
 
         .mask-img {
             position: absolute;
-            top: 0;
+            top: -2rem;
             width: 50%;
             right: 0;
-            z-index: -1;
         }
 
         #primeiros-passos>.ponto-azul {
             position: absolute;
             filter: blur(100px);
-            width: 30rem;
-            height: 30rem;
-            top: 20rem;
-            left: -10%;
-            z-index: -1;
+            width: 50rem;
+            height: 50rem;
+            top: 5rem;
+            left: -30rem;
+            z-index: 1;
+        }
+
+        #primeiros-passos>.title {
+            position: relative;
+            z-index: 1;
         }
 
         .white {
@@ -303,6 +315,7 @@
             margin-left: 10%;
             margin-top: 5rem;
         }
+
         .passos {
             display: block;
             line-height: 2rem;
@@ -317,9 +330,320 @@
             width: 620px;
             text-align: justify;
             font-weight: 100;
-            top: 45%;
+            top: 24rem;
             right: 15%;
             text-shadow: 0 0 2px rgba(54, 177, 184, 0.8), 0 0 3px rgba(54, 177, 184, 0.5);
+        }
+
+        .containers {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: auto auto;
+            gap: 20px;
+            /* max-width: 1000px; */
+            width: 100%;
+            position: relative;
+            font-family: 'Poppins';
+            font-weight: 100;
+            color: white;
+            z-index: 10;
+        }
+
+        .containers * {
+            z-index: 20;
+        }
+
+        .containers h2 {
+            text-align: center;
+            font-weight: 300;
+            font-size: 24px;
+
+        }
+
+        .containers p {
+            text-align: justify;
+            font-size: 20px;
+        }
+
+        .cont-blue {
+            background: linear-gradient(to right, rgba(54, 177, 184, 0.1) -60%, rgb(0, 0, 0, 0.2) 98%);
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            position: relative;
+            border: 1px solid rgba(54, 177, 184, 0.5);
+
+            border-top-left-radius: 50px;
+            border-bottom-right-radius: 50px;
+            border-top-right-radius: 2px;
+            border-bottom-left-radius: 2px;
+
+            position: absolute;
+        }
+
+        .img-efe {
+            position: absolute;
+            top: 50rem;
+            left: -15rem;
+        }
+
+        .efe {
+            top: 5rem;
+            left: 10rem;
+            width: 56rem;
+            height: 44rem;
+            padding: 2rem 4rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* .efe > h2, .efe > .separador, .efe > p, .efe > img {
+            position: relative;
+            top: -4rem;
+        } */
+
+        .EA {
+            top: 1rem;
+            right: 18rem;
+            width: 30rem;
+            padding: 2rem 4rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .onboarding {
+            top: 35rem;
+            right: 18rem;
+            padding: 2rem 4rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 30rem;
+        }
+
+        .leia-azul {
+            margin-top: 2rem;
+            background-color: #2F8F95;
+            font-size: 13px;
+            padding: 1rem 4rem;
+            border-radius: 2.5rem;
+            box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            position: relative;
+            z-index: 1002 !important;
+        }
+
+        .leia-azul:hover {
+            cursor: pointer !important;
+            background-color: #25767A !important;
+
+        }
+
+        .logo-main {
+            position: relative;
+            z-index: 3;
+        }
+
+        .separador {
+            width: 40%;
+            height: 1px;
+            background: linear-gradient(to right, rgba(0, 188, 212, 0), rgba(0, 188, 212, 0.6), rgba(0, 188, 212, 0));
+            box-shadow: 0 0 10px rgba(0, 188, 212, 0.5);
+            margin: 20px 0;
+        }
+
+        .efe>p {
+            padding-bottom: 2rem;
+        }
+
+        #manuais-inf {
+            height: 180vh;
+            background-color: #161616;
+            overflow: hidden;
+            position: relative;
+        }
+
+        #manuais-inf>.ponto-verde {
+            position: absolute;
+            filter: blur(100px);
+            width: 50rem;
+            height: 50rem;
+            top: 5rem;
+            left: -30rem;
+            z-index: 1;
+        }
+
+        .title-verde {
+            font-size: 64px;
+            margin-left: 16%;
+            margin-top: 5rem;
+        }
+
+        .informacoes {
+            display: block;
+            line-height: 2rem;
+            margin-left: 20%;
+            color: #3abf6b
+        }
+
+        .mask-img2 {
+            position: absolute;
+            top: -2rem;
+            width: 50%;
+            left: -2rem;
+        }
+
+        .text-inform {
+            font-size: 24px;
+            color: white;
+            position: absolute;
+            width: 700px;
+            text-align: justify;
+            font-weight: 100;
+            top: 24rem;
+            right: 16%;
+        }
+
+        .cont-green {
+            background: linear-gradient(to right, rgba(58, 191, 107, 0.1) -60%, rgb(0, 0, 0, 0.2) 98%);
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            position: relative;
+            border: 1px solid #3ABF6B;
+
+            border-top-left-radius: 50px;
+            border-bottom-right-radius: 50px;
+            border-top-right-radius: 2px;
+            border-bottom-left-radius: 2px;
+
+            position: absolute;
+        }
+
+        .separador-green {
+            width: 40%;
+            height: 1px;
+            background: linear-gradient(to right, rgba(58, 191, 107, 0), rgba(58, 191, 107, 0.6), rgba(58, 191, 107, 0));
+            box-shadow: 0 0 10px rgba(58, 191, 107, 0.5);
+            margin: 20px 0;
+        }
+
+        .leia-verde {
+            margin-top: 2rem;
+            background-color: #349A5A;
+            font-size: 13px;
+            padding: 1rem 4rem;
+            border-radius: 2.5rem;
+            box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            position: relative;
+            z-index: 1002 !important;
+        }
+
+        .leia-verde:hover {
+            cursor: pointer !important;
+            background-color: #2A7F49 !important;
+
+        }
+
+        .especializacoes {
+            height: 42rem;
+            width: 38rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            left: 15rem;
+            padding: 2rem;
+            top: 6rem;
+            line-height: 2rem;
+        }
+
+        .SAE {
+            height: 44rem;
+            width: 48rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            top: 14rem;
+            right: 15rem;
+            padding: 2rem;
+            line-height: 2rem;
+        }
+
+        .DIR {
+            height: 30rem;
+            width: 38rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            left: 15rem;
+            top: 50rem;
+            padding: 2rem;
+            line-height: 2rem;
+        }
+
+        .dicas {
+            height: 20rem;
+            width: 48rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            top: 60rem;
+            right: 15rem;
+            padding: 2rem;
+        }
+
+        .img-sae {
+            position: absolute;
+            top: 35rem;
+            right: -10rem;
+        }
+
+        footer {
+            height: 190px;
+            color: rgb(92, 92, 92);
+            display: flex;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: start;
+            margin-left: 10%;
+        }
+
+        footer h3 {
+            font-weight: 500;
+            font-size: 32px;
+        }
+
+        footer p {
+            font-weight: 100;
+        }
+
+        .separador-footer {
+            width: 90%;
+            height: 1px;
+            background: linear-gradient(to right, rgba(223, 223, 223, 0), rgba(223, 223, 223, 0.6), rgba(0, 223, 223, 0));
+            box-shadow: 0 0 10px rgba(223, 223, 223, 0.5); 
+            margin: 20px 0;
+        }
+
+        .footer-main {
+            display: flex;
+            gap: 2rem;
         }
 
     </style>
@@ -366,8 +690,11 @@
         </main>
     </section>
 
+    <section id="zindex"></section>
+
     <section id="primeiros-passos">
         <div class="ponto-azul"></div>
+        <img src="https://i.postimg.cc/MGtzhnZc/image-19-2.png" alt="" class="img-efe">
         <img src="https://i.postimg.cc/HLDTGZHg/Mask-group.png" alt="" class="mask-img">
         <div class="container-infos">
             <div class="infos-prom">
@@ -382,9 +709,99 @@
             <h2 class="azul passos"><em>PASSOS</em></h2>
         </div>
 
-        <div class="text-primeiros">Saiba mais sobre a RCC e os seus primeiros passos. Saiba mais sobre a Especialização Básica (EB) e como obtê-la.</div>
-
+        <div class="text-primeiros">Saiba mais sobre a RCC e os seus primeiros passos. Saiba mais sobre a Especialização
+            Básica (EB) e como obtê-la.</div>
+        <div class="containers">
+            <div class="efe cont-blue">
+                <h2>ESCOLA DE FORMAÇÃO DE EXECUTIVOS</h2>
+                <div class="separador"></div>
+                <p>Acesse o site da Escola de Formação de Executivos (EFE) para visualizar as aulas aplicadas pela
+                    companhia voltadas à formação dos policiais do Corpo Executivo da Polícia RCC. </p>
+                <img src="https://i.ibb.co/67rbFfPd/image-17.png" alt="" srcset="">
+                <button class="leia-azul">LEIA MAIS</button>
+            </div>
+            <div class="EA cont-blue">
+                <h2>MANUAL DA ESPEC. BÁSICA</h2>
+                <div class="separador"></div>
+                <p>Saiba mais sobre como conseguir a Especialização Básica e os seus requisitos.</p>
+                <img src="https://i.ibb.co/zKNg9QH/image-20-1.png" alt="" srcset="">
+                <button class="leia-azul">LEIA MAIS</button>
+            </div>
+            <div class="onboarding cont-blue">
+                <h2>ONBOARDING</h2>
+                <div class="separador"></div>
+                <p>Entenda os passos iniciais como Corpo Executivo e conheça mais sobre o funcionamento interna da
+                    Polícia RCC.</p>
+                <button class="leia-azul">LEIA MAIS</button>
+            </div>
+        </div>
     </section>
+
+    <section id="manuais-inf">
+        <div class="ponto-verde"></div>
+        <img src="https://i.postimg.cc/4nkQmQBm/Mask-group-2.png" alt="" class="mask-img2">
+        <img src="https://i.postimg.cc/QNPkd4Zd/image-15.png" alt="" srcset="" class="img-sae">
+        <div class="title-verde">
+            <h2 class="white">MANUAIS E</h2>
+            <h2 class="verde informacoes"><em>INFORMAÇÕES</em></h2>
+        </div>
+
+        <div class="text-inform">Depois dos seus primeiros passos, entenda melhor suas especializações, a Diretoria e
+            dicas para a sua carreira!</div>
+
+        <div class="containers">
+
+            <div class="especializacoes cont-green">
+                <h2>MANUAL DAS ESPECIALIZAÇÕES</h2>
+                <div class="separador-green"></div>
+                <p>Saiba mais sobre as três especializações existentes no Corpo Executivo, os requisitos de obtenção de
+                    cada uma delas, as permissões concedidas aos executivos com cada nível de especialização e suas
+                    responsabilidades. </p>
+                <img src="https://i.postimg.cc/FfPgVvTT/image-2.png" alt="" srcset="" width="50%">
+                <button class="leia-verde">LEIA MAIS</button>
+            </div>
+
+            <div class="SAE cont-green">
+                <h2>SUPERVISÃO DE AVANÇO DE ESPECIALIZAÇÃO (SAE)</h2>
+                <div class="separador-green"></div>
+                <p>Saiba mais sobre a Supervisão de Avanço de Especialização (SAE), que visa orientar e acompanhar os
+                    novos executivos da RCC. Ela é aplicada pelo Esquadrão do Corpo Executivo via solicitação. Para
+                    entender melhor sobre a SAE e como solicitá-la, clique no botão abaixo.</p>
+                <img src="https://i.postimg.cc/9DYBzZZ5/image-10.png" alt="" srcset="" width="50%">
+                <button class="leia-verde">LEIA MAIS</button>
+            </div>
+
+            <div class="DIR cont-green">
+                <h2>ENTENDA A DIRETORIA DO CE</h2>
+                <div class="separador-green"></div>
+                <p>Saiba mais sobre o órgão da Diretoria do Corpo Executivo, suas atribuições, sua hierarquia e quem
+                    compõe a atual Presidência.</p>
+                <img src="https://i.postimg.cc/XpFLSTvv/Group-1.png" alt="" srcset="">
+                <button class="leia-verde">LEIA MAIS</button>
+            </div>
+
+            <div class="dicas cont-green">
+                <h2>DICAS GERAIS</h2>
+                <div class="separador-green"></div>
+                <p>Saiba mais sobre dicas gerais para ter uma carreira de destaque na Polícia RCC como integrante do Corpo Executivo, tendo um bom desempenho e norte em suas atividades dentro da polícia</p>
+                <button class="leia-verde">LEIA MAIS</button>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-main">
+                <img src="https://i.postimg.cc/65CRDh3m/image-15-1.png" alt="" srcset="" class="footer-img">
+                <div>
+                    <h3>Diretoria do Corpo Executivo</h3>
+                    <p>Desenvolvido por Moonlys, .Brendon e Lintre</p>
+                </div>
+            </div>
+            <div class="separador-footer"></div>
+            <p>© Diretoria do Corpo Executivo, 2025. Todos os Direitos Reservados.</p>
+        </div>
+    </footer>
 </body>
 
 </html>
