@@ -51,6 +51,10 @@
             height: 84vh;
         }
 
+        .menu-btn {
+            display: none;
+        }
+
         main h2 {
             font-weight: 200;
             letter-spacing: 1rem;
@@ -404,7 +408,7 @@
             top: -4rem;
         } */
 
-        .EA {
+        .EB {
             top: 1rem;
             right: 18rem;
             width: 30rem;
@@ -646,6 +650,186 @@
             gap: 2rem;
         }
 
+        @media (max-width: 480px) { 
+
+            ul {
+                display: none; /* Esconde o menu por padrão */
+                flex-direction: column;
+                gap: 10px;
+                background: #ffffff;
+                position: absolute;
+                top: 0;
+                right: 0;
+                width: 50%;
+                padding: 10px;
+                z-index: 10;
+                border-radius: 10%;
+                box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            }
+
+            .menu-btn {
+                display: block;
+            }
+
+            .menu-open {
+                display: flex;
+            }
+         }
+
+        @media (max-width: 1400px) { 
+            #primeiros-passos {
+                height: 170vh;
+            }
+
+            .text-primeiros {
+                right: 4%;
+                max-width: 34rem;
+            }
+
+            .EB {
+                right: 4rem;
+            }
+
+            .efe {
+                left: 4rem;
+                width: 44rem;
+            }
+
+            .onboarding {
+                right: 4rem;
+            }
+
+            #manuais-inf {
+                height: 190vh;
+            }
+
+            .text-inform {
+                top: 22rem;
+                right: 4rem;
+            }
+
+            .especializacoes {
+                left: 4rem;
+                width: 34rem;
+            }
+
+            .SAE {
+                right: 4rem;
+                max-width: 40rem;
+            }
+
+            .img-sae {
+                width: 30%;
+            }
+
+            .DIR {
+                left: 4rem;
+                width: 34rem;
+            }
+
+            .dicas {
+                right: 4rem;
+                width: 40rem;
+            }
+        }
+        
+
+        @media (min-width: 1600px) and (max-width: 1679px) {
+
+            #primeiros-passos {
+                height: 200vh;
+            }
+
+            .text-primeiros {
+                right: 8%;
+            }
+
+            .EB {
+                right: 4rem;
+            }
+
+            .efe {
+                left: 4rem;
+            }
+
+            .onboarding {
+                right: 4rem;
+            }
+
+            #manuais-inf {
+                height: 220vh;
+            }
+
+            .text-inform {
+                top: 22rem;
+                right: 4rem;
+            }
+
+            .especializacoes {
+                left: 4rem;
+            }
+
+            .SAE {
+                right: 4rem;
+            }
+
+            .DIR {
+                left: 4rem;
+            }
+
+            .dicas {
+                right: 4rem;
+            }
+        }
+
+        @media (min-width: 1680px) and (max-width: 1900px) {
+
+            #primeiros-passos {
+                height: 170vh;
+            }
+
+            .text-primeiros {
+                right: 8%;
+            }
+
+            .EB {
+                right: 7rem;
+            }
+
+            .efe {
+                left: 7rem;
+            }
+
+            .onboarding {
+                right: 7rem;
+            }
+
+            #manuais-inf {
+                height: 190vh;
+            }
+
+            .text-inform {
+                top: 22rem;
+                right: 7rem;
+            }
+
+            .especializacoes {
+                left: 7rem;
+            }
+
+            .SAE {
+                right: 7rem;
+            }
+
+            .DIR {
+                left: 7rem;
+            }
+
+            .dicas {
+                right: 7rem;
+            }
+        }
+
     </style>
 </head>
 
@@ -658,7 +842,8 @@
                 <img src="https://i.postimg.cc/Pxz9NW9L/image-16.png" alt="logo executivos" />
             </div>
             <nav>
-                <ul>
+                <button class="menu-btn" onclick="toggleMenu()">☰</button>
+                <ul id="menu">
                     <li>INÍCIO</li>
                     <li>PRIMEIROS PASSOS</li>
                     <li>MANUAIS E INFORMAÇÕES</li>
@@ -720,7 +905,7 @@
                 <img src="https://i.ibb.co/67rbFfPd/image-17.png" alt="" srcset="">
                 <button class="leia-azul">LEIA MAIS</button>
             </div>
-            <div class="EA cont-blue">
+            <div class="EB cont-blue">
                 <h2>MANUAL DA ESPEC. BÁSICA</h2>
                 <div class="separador"></div>
                 <p>Saiba mais sobre como conseguir a Especialização Básica e os seus requisitos.</p>
@@ -802,6 +987,28 @@
             <p>© Diretoria do Corpo Executivo, 2025. Todos os Direitos Reservados.</p>
         </div>
     </footer>
-</body>
 
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById("menu");
+            menu.classList.toggle("menu-open");
+        }
+
+        function closeMenu() {
+            const menu = document.getElementById("menu");
+            menu.classList.remove("menu-open");
+        }
+
+        // Fechar o menu ao clicar fora dele
+        document.addEventListener("click", function(event) {
+            const menu = document.getElementById("menu");
+            const menuBtn = document.querySelector(".menu-btn");
+
+            // Se o clique NÃO for no menu nem no botão, fecha o menu
+            if (!menu.contains(event.target) && !menuBtn.contains(event.target)) {
+                menu.classList.remove("menu-open");
+            }
+        });
+    </script>
+</body>
 </html>
