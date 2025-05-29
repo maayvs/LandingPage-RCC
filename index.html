@@ -17,6 +17,10 @@
             font-family: 'Poppins';
         }
 
+        a {
+            all: unset;
+        }
+
         #main {
             background-color: white;
             border-bottom-right-radius: 100px;
@@ -649,7 +653,7 @@
             gap: 2rem;
         }
 
-        @media (max-width: 400px) {
+        @media (max-width: 360px) {
 
             ul {
                 display: none;
@@ -753,49 +757,67 @@
             }
 
             #zindex {
-            margin-top: -25%;
-            height: 21vh;
-            background-color: #161616;
-            overflow: hidden;
-            /* Evita o colapso da margem */
-            position: relative;
-            z-index: -1;
+                margin-top: -25%;
+                height: 21vh;
+                background-color: #161616;
+                overflow: hidden;
+                /* Evita o colapso da margem */
+                position: relative;
+                z-index: -1;
+            }
+
+            .infos-prom {
+                height: 100%;
+                border: 1px solid #36B1B8;
+                background-image: linear-gradient(to right, rgba(54, 177, 184, 0.1) -60%, rgb(0, 0, 0, 0.2) 98%);
+                font-size: 22px;
+                font-weight: 600;
+                color: white;
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                /* Adicionado para centralizar verticalmente */
+                padding: 1rem 0rem;
+                text-align: center;
+
+                width: 95%;
+            }
+
+            .word {
+                display: block;
+                font-weight: 100;
+                font-size: 10px;
+                text-shadow: none;
+            }
+
+            .container-infos {
+                display: flex;
+                justify-content: center;
+                margin-top: 2rem;
+            }
+
+            #primeiros-passos {
+                height: 100%;
+                overflow-y: auto;
+            }
+
+            ul li::after {
+                content: '';
+                position: absolute;
+                width: 0;
+                height: 0;
+                background: none;
+                transition: none;
+            }
+
+            ul li:hover::after {
+                width: 0;
+            }
+
         }
 
-        .infos-prom {
-            height: 100%;
-            border: 1px solid #36B1B8;
-            background-image: linear-gradient(to right, rgba(54, 177, 184, 0.1) -60%, rgb(0, 0, 0, 0.2) 98%);
-            font-size: 22px;
-            font-weight: 600;
-            color: white;
-
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            /* Adicionado para centralizar verticalmente */
-            padding: 1rem 0rem;
-            text-align: center;
-
-            width: 95%;
-        }
-
-        .word {
-            display: block;
-            font-weight: 100;
-            font-size: 10px;
-            text-shadow: none;
-        }
-
-        .container-infos {
-            display: flex;
-            justify-content: center;
-            margin-top: 2rem;
-        }
-
-        }
-
-        @media (min-width: 400px) and (max-width: 460px) {
+        @media (min-width: 360px) and (max-width: 500px) {
 
             ul {
                 display: none;
@@ -900,195 +922,257 @@
             }
 
             #zindex {
-            margin-top: -25%;
-            height: 21vh;
-            background-color: #161616;
-            overflow: hidden;
-            /* Evita o colapso da margem */
-            position: relative;
-            z-index: -1;
-        }
-
-        .infos-prom {
-            height: 100%;
-            border: 1px solid #36B1B8;
-            background-image: linear-gradient(to right, rgba(54, 177, 184, 0.1) -60%, rgb(0, 0, 0, 0.2) 98%);
-            font-size: 22px;
-            font-weight: 600;
-            color: white;
-
-            display: flex;
-            justify-content: center;
-            gap: 2.5rem;
-            align-items: center;
-            /* Adicionado para centralizar verticalmente */
-            padding: 1rem 0rem;
-            text-align: center;
-
-            width: 95%;
-        }
-
-        .word {
-            display: block;
-            font-weight: 100;
-            font-size: 14px;
-            text-shadow: none;
-        }
-
-        .container-infos {
-            display: flex;
-            justify-content: center;
-            margin-top: 2rem;
-        }
-
-        .infos-prom p {
-            margin-left: 0;
-            margin-right: 0;
-            text-shadow: 0 0 2px rgba(255, 255, 255, 0.8), 0 0 3px rgba(255, 255, 255, 0.5);
-            margin-top: 0;
-            line-gap-override: 0;
-        }
-
-        .title {
-            font-size: 32px;
-            margin-left: 8%;
-            margin-top: 1rem;
-        }
-
-        .efe {
-            margin: auto;
-            width: 95%;
-            padding: 1rem 2rem;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            top: 3rem;
-            left: 0;
-            position: relative;
-        }
-
-        .EB {
-            margin: auto;
-            width: 95%;
-            top: 0;
-            left: 0;
-            position: relative;
-            padding: 1rem 2rem;
-        }
-
-        .containers {
-            margin: auto;
-            display: flex;
-            flex-direction: column;
-            gap: 4rem;
-            /* max-width: 1000px; */
-            width: 100%;
-            font-family: 'Poppins';
-            font-weight: 100;
-            color: white;
-            z-index: 10;
-        }
-
-        .containers > .efe {
-            margin-top: 6rem;
-        }
-
-        .containers h2 {
-            font-size: 20px;
-        }
-
-        .onboarding {
-            margin: auto;
-            width: 95%;
-            top: -3rem;
-            left: 0;
-            position: relative;
-            padding: 1rem 2rem;
-        }
-
-        .cont-blue p {
-            font-size: 16px;
-        }
-
-        .cont-green p {
-            font-size: 16px;
-        }
-
-        .text-primeiros {
-            font-size: 16px;
-            color: white;
-            position: absolute;
-            width: 80%;
-            text-align: justify;
-            font-weight: 100;
-            top: 16rem;
-            right: 6%;
-            text-shadow: 0 0 2px rgba(54, 177, 184, 0.8), 0 0 3px rgba(54, 177, 184, 0.5);
-        }
-
-        #primeiros-passos {
-                height: 240vh;
+                margin-top: -25%;
+                height: 21vh;
+                background-color: #161616;
+                overflow: hidden;
+                /* Evita o colapso da margem */
+                position: relative;
+                z-index: -1;
             }
-        
+
+            .infos-prom {
+                height: 100%;
+                border: 1px solid #36B1B8;
+                background-image: linear-gradient(to right, rgba(54, 177, 184, 0.1) -60%, rgb(0, 0, 0, 0.2) 98%);
+                font-size: 22px;
+                font-weight: 600;
+                color: white;
+
+                display: flex;
+                justify-content: center;
+                gap: 2.5rem;
+                align-items: center;
+                /* Adicionado para centralizar verticalmente */
+                padding: 1rem 0rem;
+                text-align: center;
+
+                width: 95%;
+            }
+
+            .word {
+                display: block;
+                font-weight: 100;
+                font-size: 14px;
+                text-shadow: none;
+            }
+
+            .container-infos {
+                display: flex;
+                justify-content: center;
+                margin-top: 2rem;
+            }
+
+            .infos-prom p {
+                margin-left: 0;
+                margin-right: 0;
+                text-shadow: 0 0 2px rgba(255, 255, 255, 0.8), 0 0 3px rgba(255, 255, 255, 0.5);
+                margin-top: 0;
+                line-gap-override: 0;
+            }
+
+            .title,
             .title-verde {
-                font-size: 32px;
+                font-size: 26px;
+                margin-left: 6%;
+                margin-top: 1rem;
+            }
+
+            .informacoes {
+                margin-left: 4%;
+            }
+
+            .efe {
+                margin: auto;
+                width: 95%;
+                padding: 1rem 2rem;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                top: 3rem;
+                left: 0;
+                position: relative;
+            }
+
+            .EB {
+                margin: auto;
+                width: 95%;
+                top: 0;
+                left: 0;
+                position: relative;
+                padding: 1rem 2rem;
+            }
+
+            .containers {
+                margin: auto;
+                display: flex;
+                flex-direction: column;
+                gap: 4rem;
+                /* max-width: 1000px; */
+                width: 100%;
+                font-family: 'Poppins';
+                font-weight: 100;
+                color: white;
+                z-index: 10;
+            }
+
+            .containers>.efe {
+                margin-top: 6rem;
+            }
+
+            .containers h2 {
+                font-size: 20px;
+            }
+
+            .onboarding {
+                margin: auto;
+                width: 95%;
+                top: -3rem;
+                left: 0;
+                position: relative;
+                padding: 1rem 2rem;
+            }
+
+            .cont-blue p {
+                font-size: 16px;
+            }
+
+            .cont-green p {
+                font-size: 16px;
+            }
+
+            .text-primeiros {
+                font-size: 16px;
+                color: white;
+                position: absolute;
+                width: 80%;
+                text-align: justify;
+                font-weight: 100;
+                top: 16rem;
+                right: 6%;
+                text-shadow: 0 0 2px rgba(54, 177, 184, 0.8), 0 0 3px rgba(54, 177, 184, 0.5);
+            }
+
+            #primeiros-passos {
+                height: 100%;
+                overflow-y: auto;
+            }
+
+            .title-verde {
+                font-size: 26px;
             }
 
             .especializacoes {
                 margin: auto;
-            width: 95%;
-            padding: 1rem 2rem;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            top: 3rem;
-            left: 0;
-            position: relative;
+                width: 95%;
+                padding: 1rem 2rem;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                top: 9rem;
+                left: 0;
+                position: relative;
             }
 
             .SAE {
                 margin: auto;
-            width: 95%;
-            padding: 1rem 2rem;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            top: 3rem;
-            left: 0;
-            position: relative;
+                width: 95%;
+                padding: 1rem 2rem;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                top: 6rem;
+                left: 0;
+                position: relative;
             }
 
             .DIR {
                 margin: auto;
-            width: 95%;
-            padding: 1rem 2rem;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            top: 3rem;
-            left: 0;
-            position: relative;
+                width: 95%;
+                padding: 1rem 2rem;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                top: 3rem;
+                left: 0;
+                position: relative;
             }
 
             .dicas {
                 margin: auto;
-            width: 95%;
-            padding: 1rem 2rem;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            top: 3rem;
-            left: 0;
-            position: relative;
+                width: 95%;
+                padding: 1rem 2rem;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                top: 0rem;
+                left: 0;
+                position: relative;
+                margin-bottom: 2rem;
             }
 
             #manuais-inf {
-                height: 320vh;
+                height: 100%;
+                overflow-y: auto;
+            }
+
+            footer {
+                height: 140px;
+            }
+
+            .footer-img {
+                height: 30px;
+                width: 30px;
+            }
+
+            footer h3 {
+                font-weight: 500;
+                font-size: 20px;
+            }
+
+            footer p {
+                font-weight: 100;
+                font-size: 10px;
+            }
+
+            .footer-main {
+                gap: 0.5rem;
+            }
+
+            .img-sae {
+                position: absolute;
+                top: 75rem;
+                right: -12rem;
+                width: 100%;
+            }
+
+            .text-inform {
+                font-size: 16px;
+                color: white;
+                position: absolute;
+                width: 80%;
+                text-align: justify;
+                font-weight: 100;
+                top: 8rem;
+                right: 6%;
+            }
+
+            ul li::after {
+                content: '';
+                position: absolute;
+                width: 0;
+                height: 0;
+                background: none;
+                transition: none;
+            }
+
+            ul li:hover::after {
+                width: 0;
             }
 
         }
@@ -1117,7 +1201,8 @@
             }
 
             #manuais-inf {
-                height: 190vh;
+                height: 100%;
+                overflow-y: auto;
             }
 
             .text-inform {
@@ -1260,9 +1345,9 @@
             <nav>
                 <button class="menu-btn" onclick="toggleMenu()">☰</button>
                 <ul id="menu">
-                    <li>INÍCIO</li>
-                    <li>PRIMEIROS PASSOS</li>
-                    <li>MANUAIS E INFORMAÇÕES</li>
+                    <li><a href="#inicio">INÍCIO</a></li>
+                    <li><a href="#primeiros-passos">PRIMEIROS PASSOS</a></li>
+                    <li><a href="#manuais-inf">MANUAIS E INFORMAÇÕES</a></li>
                 </ul>
             </nav>
         </header>
