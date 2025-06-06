@@ -17,6 +17,17 @@
             font-family: 'Poppins';
         }
 
+        .elemento {
+            opacity: 0;
+            transform: translateY(100px);
+            transition: opacity 1s ease-out, transform 1s ease-out;
+        }
+
+        .elemento.visivel {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
         a {
             all: unset;
         }
@@ -1338,16 +1349,16 @@
 
     <section id="main">
         <header>
-            <div class="logo-main">
+            <div class="logo-main elemento">
                 <img src="https://i.postimg.cc/PqN5WxTr/image-14.png" alt="logo diretoria" />
                 <img src="https://i.postimg.cc/Pxz9NW9L/image-16.png" alt="logo executivos" />
             </div>
-            <nav>
+            <nav class="elemento">
                 <button class="menu-btn" onclick="toggleMenu()">☰</button>
                 <ul id="menu">
-                    <li><a href="#inicio">INÍCIO</a></li>
-                    <li><a href="#primeiros-passos">PRIMEIROS PASSOS</a></li>
-                    <li><a href="#manuais-inf">MANUAIS E INFORMAÇÕES</a></li>
+                    <li>INÍCIO</li>
+                    <li>PRIMEIROS PASSOS</li>
+                    <li>MANUAIS E INFORMAÇÕES</li>
                 </ul>
             </nav>
         </header>
@@ -1357,7 +1368,7 @@
                 <div class="ponto-azul"></div>
                 <div class="ponto-verde"></div>
             </div>
-            <div class="content">
+            <div class="content elemento">
                 <h2>PORTAL DO</h2>
                 <h1>CORPO</h1>
                 <h1>EXECUTIVO</h1>
@@ -1371,7 +1382,8 @@
             <div class="div-img">
                 <div class="ponto-azul"></div>
                 <div class="ponto-verde"></div>
-                <img class="img-main" src="https://i.ibb.co/PsYsBvVs/xaDdJaZ.png" alt="imagem principal" width="34%" />
+                <img class="img-main elemento" src="https://i.ibb.co/PsYsBvVs/xaDdJaZ.png" alt="imagem principal"
+                    width="34%" />
             </div>
         </main>
     </section>
@@ -1379,105 +1391,107 @@
     <section id="zindex"></section>
 
     <section id="primeiros-passos">
-        <div class="ponto-azul"></div>
+        <div class="ponto-azul elemento"></div>
         <img src="https://i.postimg.cc/MGtzhnZc/image-19-2.png" alt="" class="img-efe">
         <img src="https://i.postimg.cc/HLDTGZHg/Mask-group.png" alt="" class="mask-img">
         <div class="container-infos">
-            <div class="infos-prom">
-                <p>550<span class="azul">+</span><span class="word">Executivos</span></p>
-                <p>350<span class="verde">+</span><span class="word">Especializados</span></p>
-                <p>400<span class="azul">+</span><span class="word">Propostas</span></p>
+            <div class="infos-prom elemento">
+                <p>550<span class="azul elemento">+</span><span class="word">Executivos</span></p>
+                <p>350<span class="verde elemento">+</span><span class="word">Especializados</span></p>
+                <p>400<span class="azul elemento">+</span><span class="word">Propostas</span></p>
             </div>
         </div>
 
-        <div class="title">
-            <h2 class="white">PRIMEIROS</h2>
-            <h2 class="azul passos"><em>PASSOS</em></h2>
+        <div class="title elemento">
+            <h2 class="white elemento">PRIMEIROS</h2>
+            <h2 class="azul passos elemento"><em>PASSOS</em></h2>
         </div>
 
-        <div class="text-primeiros">Saiba mais sobre a RCC e os seus primeiros passos. Saiba mais sobre a Especialização
+        <div class="text-primeiros elemento">Saiba mais sobre a RCC e os seus primeiros passos. Saiba mais sobre a
+            Especialização
             Básica (EB) e como obtê-la.</div>
-        <div class="containers">
-            <div class="efe cont-blue">
+        <div class="containers elemento">
+            <div class="efe cont-blue elemento">
                 <h2>ESCOLA DE FORMAÇÃO DE EXECUTIVOS</h2>
-                <div class="separador"></div>
+                <div class="separador elemento"></div>
                 <p>Acesse o site da Escola de Formação de Executivos (EFE) para visualizar as aulas aplicadas pela
                     companhia voltadas à formação dos policiais do Corpo Executivo da Polícia RCC. </p>
                 <img src="https://i.ibb.co/67rbFfPd/image-17.png" alt="" srcset="">
-                <button class="leia-azul">LEIA MAIS</button>
+                <a class="leia-azul elemento">LEIA MAIS</a>
             </div>
-            <div class="EB cont-blue">
+            <div class="EB cont-blue elemento">
                 <h2>MANUAL DA ESPEC. BÁSICA</h2>
                 <div class="separador"></div>
                 <p>Saiba mais sobre como conseguir a Especialização Básica e os seus requisitos.</p>
                 <img src="https://i.ibb.co/zKNg9QH/image-20-1.png" alt="" srcset="">
-                <button class="leia-azul">LEIA MAIS</button>
+                <a class="leia-azul elemento" href="https://www.policiarcc.com/t38724-ce-manual-da-especializacao-basica" target="_blank"">LEIA MAIS</a>
             </div>
-            <div class="onboarding cont-blue">
+            <div class="onboarding cont-blue elemento">
                 <h2>ONBOARDING</h2>
-                <div class="separador"></div>
+                <div class="separador elemento"></div>
                 <p>Entenda os passos iniciais como Corpo Executivo e conheça mais sobre o funcionamento interna da
                     Polícia RCC.</p>
-                <button class="leia-azul">LEIA MAIS</button>
+                <a class="leia-azul">LEIA MAIS</a>
             </div>
         </div>
     </section>
 
     <section id="manuais-inf">
-        <div class="ponto-verde"></div>
-        <img src="https://i.postimg.cc/4nkQmQBm/Mask-group-2.png" alt="" class="mask-img2">
-        <img src="https://i.postimg.cc/QNPkd4Zd/image-15.png" alt="" srcset="" class="img-sae">
+        <div class="ponto-verde elemento"></div>
+        <img src="https://i.postimg.cc/4nkQmQBm/Mask-group-2.png" alt="" class="mask-img2 elemento">
+        <img src="https://i.postimg.cc/QNPkd4Zd/image-15.png" alt="" srcset="" class="img-sae elemento">
         <div class="title-verde">
-            <h2 class="white">MANUAIS E</h2>
-            <h2 class="verde informacoes"><em>INFORMAÇÕES</em></h2>
+            <h2 class="white elemento">MANUAIS E</h2>
+            <h2 class="verde informacoes elemento"><em>INFORMAÇÕES</em></h2>
         </div>
 
-        <div class="text-inform">Depois dos seus primeiros passos, entenda melhor suas especializações, a Diretoria e
+        <div class="text-inform elemento">Depois dos seus primeiros passos, entenda melhor suas especializações, a
+            Diretoria e
             dicas para a sua carreira!</div>
 
-        <div class="containers">
+        <div class="containers elemento">
 
-            <div class="especializacoes cont-green">
+            <div class="especializacoes cont-green elemento">
                 <h2>MANUAL DAS ESPECIALIZAÇÕES</h2>
-                <div class="separador-green"></div>
+                <div class="separador-green elemento"></div>
                 <p>Saiba mais sobre as três especializações existentes no Corpo Executivo, os requisitos de obtenção de
                     cada uma delas, as permissões concedidas aos executivos com cada nível de especialização e suas
                     responsabilidades. </p>
-                <img src="https://i.postimg.cc/FfPgVvTT/image-2.png" alt="" srcset="" width="50%">
-                <button class="leia-verde">LEIA MAIS</button>
+                <img src="https://i.postimg.cc/FfPgVvTT/image-2.png" alt="" srcset="" width="50%" class="elemento">
+                <a class="leia-verde" href="https://www.policiarcc.com/t37254-apostila-09-especializacoes" target="_blank">LEIA MAIS</a>
             </div>
 
-            <div class="SAE cont-green">
+            <div class="SAE cont-green elemento">
                 <h2>SUPERVISÃO DE AVANÇO DE ESPECIALIZAÇÃO (SAE)</h2>
                 <div class="separador-green"></div>
                 <p>Saiba mais sobre a Supervisão de Avanço de Especialização (SAE), que visa orientar e acompanhar os
                     novos executivos da RCC. Ela é aplicada pelo Esquadrão do Corpo Executivo via solicitação. Para
                     entender melhor sobre a SAE e como solicitá-la, clique no botão abaixo.</p>
-                <img src="https://i.postimg.cc/9DYBzZZ5/image-10.png" alt="" srcset="" width="50%">
-                <button class="leia-verde">LEIA MAIS</button>
+                <img src="https://i.postimg.cc/9DYBzZZ5/image-10.png" alt="" srcset="" width="50%" class="elemento">
+                <a class="leia-verde" href="https://www.policiarcc.com/t38523-ece-apresentacao-da-sae" target="_blank">LEIA MAIS</a>
             </div>
 
-            <div class="DIR cont-green">
+            <div class="DIR cont-green elemento">
                 <h2>ENTENDA A DIRETORIA DO CE</h2>
                 <div class="separador-green"></div>
                 <p>Saiba mais sobre o órgão da Diretoria do Corpo Executivo, suas atribuições, sua hierarquia e quem
                     compõe a atual Presidência.</p>
                 <img src="https://i.postimg.cc/XpFLSTvv/Group-1.png" alt="" srcset="">
-                <button class="leia-verde">LEIA MAIS</button>
+                <a class="leia-verde" href="https://www.policiarcc.com/t38582-apostila-10-entenda-a-diretoria-do-corpo-executivo" target="_blank">LEIA MAIS</a>
             </div>
 
-            <div class="dicas cont-green">
+            <div class="dicas cont-green elemento">
                 <h2>DICAS GERAIS</h2>
                 <div class="separador-green"></div>
                 <p>Saiba mais sobre dicas gerais para ter uma carreira de destaque na Polícia RCC como integrante do
                     Corpo Executivo, tendo um bom desempenho e norte em suas atividades dentro da polícia</p>
-                <button class="leia-verde">LEIA MAIS</button>
+                <a class="leia-verde" href="https://www.policiarcc.com/t38583-apostila-11-dicas-gerais-para-o-corpo-executivo" target="_blank">LEIA MAIS</a>
             </div>
         </div>
     </section>
 
     <footer>
-        <div class="footer-content">
+        <div class="footer-content elemento">
             <div class="footer-main">
                 <img src="https://i.postimg.cc/65CRDh3m/image-15-1.png" alt="" srcset="" class="footer-img">
                 <div>
@@ -1511,7 +1525,27 @@
                 menu.classList.remove("menu-open");
             }
         });
+
+        // Criando o Observer
+        const observer = new IntersectionObserver(
+            (entries, observer) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+
+                        entry.target.classList.add("visivel");
+                        observer.unobserve(entry.target);
+                    }
+                });
+            },
+            { threshold: 0.1 }
+        );
+        const elementos = document.querySelectorAll(".elemento");
+
+        elementos.forEach((elemento) => {
+            observer.observe(elemento);
+        });
     </script>
 </body>
+
 
 </html>
